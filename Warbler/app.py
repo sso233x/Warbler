@@ -374,9 +374,3 @@ def add_header(req):
     req.headers["Expires"] = "0"
     req.headers['Cache-Control'] = 'public, max-age=0'
     return req
-
-if __name__ == "__main__":
-    with app.app_context():
-        db.create_all() 
-    app.run(debug=True)
-
