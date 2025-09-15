@@ -24,6 +24,9 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', "it's a secret")
 
 connect_db(app)
 
+with app.app_context():
+    db.create_all()
+
 
 ##############################################################################
 # User signup/login/logout
