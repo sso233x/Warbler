@@ -27,6 +27,9 @@ connect_db(app)
 with app.app_context():
     db.create_all()
 
+    if User.query.count() == 0:
+        import seed
+
 
 ##############################################################################
 # User signup/login/logout
